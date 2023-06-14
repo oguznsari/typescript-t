@@ -1,2 +1,2 @@
 # typescript-t
-TypeScript training
+[TypeScript training](https://www.youtube.com/watch?v=WlxcujsvcIY)
