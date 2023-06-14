@@ -102,3 +102,55 @@ testAny = [true];
 let testAnyArray: any[];
 testAnyArray = ["one", 2, false, []];
 
+
+
+// Functions
+let sayHi = () => {
+    console.log("Hi, welcome!");
+}
+
+// sayHi = "hi";
+
+
+let functionReturnString = (): string => {
+    // console.log("hi");
+    return "hi";
+}
+
+
+let multiple = (num: number): number => {
+    return num * 2;
+}
+// same
+let multiple2 = (num: number) => {
+    return num * 2;
+}
+
+let multiple3 = (num: number): void => {
+    // return num * 2;
+    console.log(num);
+    // do sth but don't return
+}
+
+let sum = (num1: number, num2: number, another?: number) => {
+    return num1 + num2;
+}
+
+sum(2, 3);
+
+
+let func = (user: { username: string, age: number, phone?: string }) => {
+    console.log(user.username);
+};
+// since it looks ugly -> use type aliases
+
+// TYPE ALIASES
+type UserType = {
+    username: string,
+    age: number,
+    phone?: string
+}
+
+let betterFunc = (user: UserType) => {
+    console.log(user.username);
+}
