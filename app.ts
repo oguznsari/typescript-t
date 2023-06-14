@@ -205,3 +205,62 @@ const client: IUser = {
 
 // If you need to extend any type just use Interfaces,
 // If you don't need then use type
+
+
+
+// GENERICS
+interface IAuthor {
+    id: number,
+    username: string,
+}
+
+interface ICategory {
+    id: number,
+    title: string
+}
+
+interface IPost {
+    id: number,
+    title: string,
+    desc: string,
+    extra: IAuthor[] | ICategory[];
+}
+
+
+// what if I need extra fields
+// <T> take the type as a parameter can be string | number | any other interface
+interface IPostBetter<T> {
+    id: number,
+    title: string,
+    desc: string,
+    extra: T[]
+}
+
+const testMe: IPostBetter<String> = {
+    id: 1,
+    title: "post title",
+    desc: "post desc",
+    extra: ["str", "str2"]
+}
+
+
+interface IPostEvenBetter<T extends object> {
+    id: number,
+    title: string,
+    desc: string,
+    extra: T[]
+}
+
+const testMe2: IPostEvenBetter<IAuthor> = {
+    id: 1,
+    title: "post title",
+    desc: "post desc",
+    extra: [{ id: 1, username: "john" }]
+}
+
+const testMe3: IPostEvenBetter<ICategory> = {
+    id: 1,
+    title: "post title",
+    desc: "post desc",
+    extra: [{ id: 1, title: "john title" }]
+}
