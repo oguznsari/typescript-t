@@ -154,3 +154,25 @@ type UserType = {
 let betterFunc = (user: UserType) => {
     console.log(user.username);
 }
+
+
+type myFunc = (a: number, b: string) => void
+
+let write: myFunc = (num, str) => {
+    console.log(num + " time " + str);
+}
+
+
+type UserType2 = {
+    username: string,
+    age: number,
+    phone?: string,
+    theme: "dark" | "light";
+}
+
+const userWithTheme: UserType2 = {
+    username: "john",
+    age: 23,
+    //    theme: "pink",
+    theme: "dark"
+}
