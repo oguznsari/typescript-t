@@ -45,3 +45,12 @@ let primaryContact: Contact = {
 }
 
 type ContactName = string;
+
+
+type ContactFields = keyof Contact;
+
+function getValue(source, propertyName: keyof Contact) {
+    return source[propertyName];
+}
+
+const value = getValue(contact, "status")
