@@ -14,7 +14,7 @@ b = ["correct"];
 
 interface Contact extends Address {
     id: number;
-    name: string;
+    name: ContactName;
     birthDate: Date;
 }
 
@@ -35,3 +35,5 @@ let primaryContact: Contact = {
     province: "es",
     region: "es"
 }
+
+type ContactName = string;
