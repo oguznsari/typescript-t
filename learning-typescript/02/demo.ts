@@ -59,3 +59,9 @@ const value = getValue(contact, "status");
 // typeof short-cut
 const myType = { min: 1, max: 200 };
 function save(source: typeof myType) { }
+
+// dynamic but limited types || any - unlimited types
+let x2: Record<string, string | number | boolean | Function> = { name: "Wruce Bayne" }
+x2.number = 1234;
+x2.active = true;
+x2.log = () => console.log("awesome!")
