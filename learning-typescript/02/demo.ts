@@ -16,6 +16,13 @@ interface Contact extends Address {
     id: number;
     name: ContactName;
     birthDate: Date;
+    status: ContactStatus
+}
+
+enum ContactStatus {
+    Active = "active",
+    Inactive = "inactive",
+    New = "new"
 }
 
 interface Address {
@@ -33,7 +40,8 @@ let primaryContact: Contact = {
     postalCode: "34510",
     line1: "es",
     province: "es",
-    region: "es"
+    region: "es",
+    status: ContactStatus.Active
 }
 
 type ContactName = string;
