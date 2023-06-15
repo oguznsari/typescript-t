@@ -53,4 +53,9 @@ function getValue(source, propertyName: keyof Contact) {
     return source[propertyName];
 }
 
-const value = getValue(contact, "status")
+const value = getValue(contact, "status");
+
+
+// typeof short-cut
+const myType = { min: 1, max: 200 };
+function save(source: typeof myType) { }
