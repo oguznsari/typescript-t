@@ -64,4 +64,41 @@ function save(source: typeof myType) { }
 let x2: Record<string, string | number | boolean | Function> = { name: "Wruce Bayne" }
 x2.number = 1234;
 x2.active = true;
-x2.log = () => console.log("awesome!")
+x2.log = () => console.log("awesome!");
+
+
+
+/*
+ Utility Types:
+ -----------------------------------------
+ Partial        X       Required
+ Omit           X       Pick
+ -----------------------------------------
+*/
+
+interface Query {
+    sort?: 'asc' | 'desc';
+    matches(val): boolean;
+}
+
+// Partial
+type ContactQuery = Partial<
+    Record<keyof Contact, Query>
+>
+
+// Omit
+type ContactQuery2 = Omit<
+    Partial<Record<keyof Contact, Query>>,
+    "address"
+>
+
+// Pick
+type ContactQuery3 = Partial<
+    Pick<
+        Record<keyof Contact, Query>,
+        "id" | "name"
+    >
+>
+
+// Required
+type ContactQuery4 = Required<ContactQuery3>;
