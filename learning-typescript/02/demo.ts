@@ -102,3 +102,8 @@ type ContactQuery3 = Partial<
 
 // Required
 type ContactQuery4 = Required<ContactQuery3>;
+
+// Mapped type
+// type ContactQuery5 = {
+//     [Tprop in keyof Contact]?: Query<Contact[Tprop]
+// }
