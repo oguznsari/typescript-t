@@ -39,3 +39,10 @@ saveInventoryItem({
     createDate: new Date()
 });
 
+
+function clone(source) {
+    const serialized = JSON.stringify(source);
+    return JSON.parse(serialized);
+}
+
+const cloned = clone(inventoryItem);
