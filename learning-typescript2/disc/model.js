@@ -10,4 +10,9 @@ function saveInventoryItem(item) {
 }
 var inventoryItem = getInventoryItem(trackingNumber);
 inventoryItem.createDate = new Date();
-saveInventoryItem(inventoryItem);
+saveInventoryItem({
+    displayName: 'M1 MacBook Pro 14"',
+    inventoryType: "computer",
+    trackingNumber: "MBPM1123456",
+    createDate: new Date()
+});
