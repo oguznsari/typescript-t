@@ -3,6 +3,7 @@ var inventoryType = "furniture";
 var trackingNumber = "FD123455";
 var createDate = new Date();
 var originalCost = 425;
+originalCost = "A Lot of money!";
 var InventoryItemType;
 (function (InventoryItemType) {
     InventoryItemType["Computer"] = "computer";
