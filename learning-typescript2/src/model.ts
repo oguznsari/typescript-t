@@ -46,3 +46,6 @@ function clone<T>(source: T): T {
 }
 
 const cloned = clone(inventoryItem);
+
+
+declare var Vue: any;
