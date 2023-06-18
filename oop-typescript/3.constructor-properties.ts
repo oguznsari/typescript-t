@@ -9,6 +9,11 @@ export class Message {
         this.isSent = false;
     }
 
+    get messageStatus(): string {
+        const sentMessage = this.isSent ? 'Has been sent.' : 'Has not been sent.';
+        return `${this.message} | ${sentMessage}`;
+    }
+
     priviewMessage(): string {
         return this.message.slice(0, 10).concat('...')
     }
@@ -16,4 +21,5 @@ export class Message {
 
 const message = new Message("Hello", "World");
 
+message.messageStatus;
 message.priviewMessage();
