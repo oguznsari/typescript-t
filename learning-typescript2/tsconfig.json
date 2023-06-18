@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
         "target": "ES5",
-        "outDir": "disc"
+        "outDir": "disc",
+        "allowJs": true,
+        "checkJs": true
     }
 }
