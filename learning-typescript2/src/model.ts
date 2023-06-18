@@ -40,7 +40,7 @@ saveInventoryItem({
 });
 
 
-function clone(source) {
+function clone(source: InventoryItem): InventoryItem {
     const serialized = JSON.stringify(source);
     return JSON.parse(serialized);
 }
