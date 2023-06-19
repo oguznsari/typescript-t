@@ -4,3 +4,4 @@
 3. [learning-typescript2](https://www.linkedin.com/learning/learning-typescript-2/)
 
 5. [typescript-node](https://www.linkedin.com/learning/typescript-for-node-js-developers/template-a-node-js-and-express-project)
+    * npm i -g ts-node
