@@ -4,14 +4,12 @@ import { ContactSchema } from '../models/crmModel';
 const Contact = mongoose.model('Contact', ContactSchema);
 
 export const addNewContact = (req, res) => {
-    let newContact = new Contact(req.body);
-
-    newContact.save((err, contact) => {
-        if (err) {
-            res.send(err);
-        }
-        res.json(contact);
-    });
+    try {
+        let newContact = new Contact(req.body);
+        res.json(newContact);
+    } catch (error) {
+        res.send(error);
+    }
 };
 
 export const getContacts = (req, res) => {
@@ -33,16 +31,17 @@ export const getContactWithID = (req, res) => {
 }
 
 export const updateContact = (req, res) => {
-    Contact.findOneAndUpdate({ _id: req.params.contactId }, req.body, { new: true }, (err) => {
-        if (err) {
-            res.send(err);
-        }
-        res.json(contact);
-    })
+    try {
+        let contact = Contact.findOneAndUpdate({ _id: req.params.contactId }, req.body, { new: true });
+        res.json(contact)
+
+    } catch (error) {
+        res.send(error);
+    }
 }
 
 export const deleteContact = (req, res) => {
-    Contact.remove({ _id: req.params.contactId }, (err, contact) => {
+    Contact.deleteOne({ _id: req.params.contactId }, (err, contact) => {
         if (err) {
             res.send(err);
         }

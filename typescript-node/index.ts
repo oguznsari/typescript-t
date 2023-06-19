@@ -1,6 +1,6 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
+import * as express from 'express';
+import mongoose, { ConnectOptions } from 'mongoose';
+import * as bodyParser from 'body-parser';
 import routes from './src/routes/crmRoutes';
 require('dotenv').config();
 
@@ -12,7 +12,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-});
+} as ConnectOptions);
 
 // bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true }));
