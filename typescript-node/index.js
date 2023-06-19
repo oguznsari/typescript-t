@@ -9,8 +9,9 @@ const PORT = 3000;
 
 // mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('<insert your own credentials>', {
-    useMongoClient: true
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 // bodyparser setup
