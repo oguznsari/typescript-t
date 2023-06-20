@@ -5,3 +5,6 @@
 
 5. [typescript-node](https://www.linkedin.com/learning/typescript-for-node-js-developers/template-a-node-js-and-express-project)
     * npm i -g ts-node
+
+
+[official docs](https://www.typescriptlang.org/)
