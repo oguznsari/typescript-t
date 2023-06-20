@@ -23,16 +23,14 @@ app.use(bodyParser.json());
 
 routes(app);
 
-interface Name {
-    firstName: string;
+// generics
+function nameCreator<T>(name: T): T {
+    return name;
+
 }
 
-// function with interface
-const nameCreator = (name: Name): string => {
-    return `Hello, ${name.firstName},`;
-}
-
-let myName = { firstName: 'Mant' };
+let myName = nameCreator<string>('Manny, ');
+// let myName = nameCreator<number>(5);
 
 
 // serving static files
@@ -43,5 +41,5 @@ app.get('/', (req, res) =>
 );
 
 app.listen(Settings.PORT, () =>
-    console.log(nameCreator(myName), messages.messagePrint())
+    console.log(myName, messages.messagePrint())
 );
