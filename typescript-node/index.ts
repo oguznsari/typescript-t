@@ -5,11 +5,12 @@ import routes from './src/routes/crmRoutes';
 require('dotenv').config();
 
 const app = express();
-const PORT = 3000;
+const PORT: number = 3000;
 
+const database: string = process.env.MONGO_URI;
 // mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(database, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 } as ConnectOptions);
