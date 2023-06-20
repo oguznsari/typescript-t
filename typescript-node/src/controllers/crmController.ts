@@ -12,13 +12,25 @@ export const addNewContact = (req, res) => {
     }
 };
 
-export const getContacts = (req, res) => {
-    Contact.find({}, (err, contact) => {
-        if (err) {
-            res.send(err);
-        }
+export const getContacts = async (req, res) => {
+
+    try {
+        let contact = await Contact.find({});
         res.json(contact);
-    });
+
+        // actual data
+        for (let item of contact) {
+            console.log(item);
+        }
+
+        // position of data
+        for (let itemPos in contact) {
+            console.log(itemPos);
+        }
+    } catch (error) {
+        res.send(error);
+
+    }
 };
 
 export const getContactWithID = (req, res) => {
