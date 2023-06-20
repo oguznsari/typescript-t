@@ -3,9 +3,11 @@ import mongoose, { ConnectOptions } from 'mongoose';
 import * as bodyParser from 'body-parser';
 import routes from './src/routes/crmRoutes';
 require('dotenv').config();
+import messenger from './src/controllers/createMessage';
 
 const app = express();
 const PORT: number = 3000;
+let messages = new messenger(PORT);
 
 const database: string = process.env.MONGO_URI;
 // mongoose connection
@@ -25,9 +27,9 @@ routes(app);
 app.use(express.static('public'));
 
 app.get('/', (req, res) =>
-    res.send(`Node and express server is running on port ${PORT}`)
+    res.send(messages.messagePrint())
 );
 
 app.listen(PORT, () =>
-    console.log(`your server is running on port ${PORT}`)
+    console.log(messages.messagePrint())
 );
