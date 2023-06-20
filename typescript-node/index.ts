@@ -4,10 +4,10 @@ import * as bodyParser from 'body-parser';
 import routes from './src/routes/crmRoutes';
 require('dotenv').config();
 import messenger from './src/controllers/createMessage';
+import { Settings } from './settings';
 
 const app = express();
-const PORT: number = 3000;
-let messages = new messenger(PORT);
+let messages = new messenger(Settings.PORT);
 
 const database: string = process.env.MONGO_URI;
 // mongoose connection
@@ -30,6 +30,6 @@ app.get('/', (req, res) =>
     res.send(messages.messagePrint())
 );
 
-app.listen(PORT, () =>
+app.listen(Settings.PORT, () =>
     console.log(messages.messagePrint())
 );
