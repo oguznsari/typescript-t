@@ -26,7 +26,7 @@ function App() {
         {/* <p>
           The value {firstName} is of {typeof firstName} type!
         </p> */}
-        <Message message='This is a simple message' />
+        <Message name='Manny' message='This is a simple message' />
       </header>
     </div>
   );
