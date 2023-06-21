@@ -1,4 +1,5 @@
 import './App.css';
+import Message from './Message';
 
 function App() {
   // let firstValue: string = 'Manny';
@@ -12,7 +13,7 @@ function App() {
   // enum   
   // enum Codes { first = 1, second = 2 };
   // any
-  let firstName: any = 'Manny';
+  // let firstName: any = 'Manny';
   // void
   // const warning = (): void => {
   //   console.log('Warning');
@@ -22,9 +23,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        {/* <p>
           The value {firstName} is of {typeof firstName} type!
-        </p>
+        </p> */}
+        <Message />
       </header>
     </div>
   );
