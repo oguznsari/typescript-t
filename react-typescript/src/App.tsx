@@ -20,6 +20,17 @@ function App() {
   // }
   // warning();
 
+  // const initialState = {
+  //   name: 'Manny',
+  //   message: 'TypeScript is cool!!'
+  // }
+
+  // type State = Readonly<typeof initialState>
+
+  // readonly state: State = initialState;
+  // this.state.name
+
+
   return (
     <div className="App">
       <header className="App-header">
